@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;ps2/WebContent/draghandler.js&apos; to &apos;dragHandler.js&apos;" description="Rename resource &apos;draghandler.js&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="WebContent/draghandler.js" name="dragHandler.js" stamp="1334026608116" updateReferences="true"/>
+</session>

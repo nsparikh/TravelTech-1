@@ -1,0 +1,56 @@
+html {
+    background-color: #eee;
+}
+
+/* Your CSS here */
+
+body {
+	padding: 20px 20px 20px 20px;
+	font-family: Tebuchet MS, sans-serif;
+}
+
+h1 {
+	font-style: bold;
+	padding-bottom: 30px;
+	color: gray;
+}
+
+#lang_from {
+	color: black;
+}
+
+#lang_to {
+	color: black;
+}
+
+td {
+	padding: 2px 20px 2px 2px;
+}
+
+th {
+	padding: 2px 20px 2px 2px;
+	text-align: left;
+	font-style: bold;
+	color: gray;
+}
+
+tr.spaceUnder td {
+	padding-bottom: 1em;
+	font-weight: bold;
+}
+
+tr.blue td {
+	color: blue;
+}
+
+tr.red td {
+	color: red;
+}
+
+#strike {
+	text-decoration: line-through
+}
+
+#firstColumn {
+	width: 180px;
+}

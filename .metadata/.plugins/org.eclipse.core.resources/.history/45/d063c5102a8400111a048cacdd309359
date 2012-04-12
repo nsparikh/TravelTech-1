@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	
+	<title>TravelTech - Home</title>
+
+	<link rel="stylesheet" type="text/css" href="css/top_bar.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/home.css" media="screen"/>
+	<link rel="stylesheet" type="text/css" href="css/calendar.css" media="screen"/>
+
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>	
+    <script type="text/javascript"
+      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyDW0nS945cOqUIs777Cqe1huGrvUN76jQ8&sensor=false">
+    </script>
+    
+	<script type='text/javascript'>
+		// map
+		function initializeMap() {
+			var myOptions = {
+				center: new google.maps.LatLng(-34,397, 150.644),
+				zoom: 4,
+				mapTypeId: google.maps.MapTypeId.HYBRID
+				
+			};
+			var map = new google.maps.Map(document.getElementById('map_container'), myOptions);
+		}
+	
+		// on ready
+		$(document).ready(function() {
+			
+			// Calendar
+  	  		$(".calendars").datepicker();
+  	  		
+  	  		// Search bar
+  	  		
+  	  		$('input[name="destination"]').each(function() {
+  	  			this.value = $(this).attr('name');
+  	  			$(this).addClass('big_fields');
+  	  			
+  	  			$(this).focus(function() {
+  	  				if (this.value == $(this).attr('name')) {
+  	  					this.value = '';
+  	  					$(this).removeClass('big_fields');
+  	  				}
+  	  			})
+  	  			
+  	  			$(this).blur(function() {
+  	  				if (this.value == '') {
+  	  					this.value = $(this).attr('name');
+  	  					$(this).addClass('big_fields');
+  	  				}
+  	  			})
+  	  		})
+  	  		
+	  	});
+	</script>
+
+</head>
+
+<body onload="initializeMap()">
+	
+
+<!-- Navigation bar at top of page -->
+<div id='nav_bar'>
+	<div id='nav_left'>
+		<a href='#'><img id='logo' src='images/logo.png' alt='TravelTech' /></a>
+	</div>
+
+	<div id='nav_right'>
+		<ul>
+			<li id='my_info_button_container' class='button_containers'>
+				<input type='button' id='my_info_button' class='buttons' value='My Info' />
+			</li>
+			<li id='logout_button_container' class='button_containers'>
+				<input type='button' id='logout_button' class='buttons' value='Log Out' />
+			</li>
+		</ul>
+	</div>
+</div>
+<!-- end nav_bar div-->
+
+
+
+<!-- Page body -->
+<div id='page_body'>
+	<table>
+		<tr>
+		<!--	<td id='dest_label' colspan='1'><label for='destination'>destination</label></td> -->
+			<td class='field_containers' colspan='4'><input type='text' style='width:100%; height:30px' name='destination'/></td>
+		</tr>
+		<tr>
+			<td class='cal_labels' id='start_label'>start date</td>
+			<td></td>
+			<td></td>
+			<td class='cal_labels' id='end_label'>end date</td>
+		</tr>
+		<tr>
+			<td colspan='2'><div class='calendars' id='start_cal'></div></td>
+			<td colspan='2'><div class='calendars' id='end_cal'></div></td>
+		</tr>
+
+	</table>
+
+	
+
+
+		<!--<iframe width="500" height="350" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="http://maps.google.com/maps/ms?msa=0&amp;msid=208809373029603601262.0004bd5a6641fddd5708e&amp;ie=UTF8&amp;t=m&amp;ll=42.358227,-71.091928&amp;spn=0.030444,0.054932&amp;z=14&amp;output=embed"></iframe>-->
+
+
+<!-- end page_body div-->
+</div>
+
+
+
+<!-- embedded Google Maps frame -->
+<div id='map_container' style="width:100%; height:100%"></div>
+
+
+<!-- bottom bar -->
+<div id='bottom_bar'></div>
+<!-- end bottom bar -->
+
+
+
+</body>
+
+</html>

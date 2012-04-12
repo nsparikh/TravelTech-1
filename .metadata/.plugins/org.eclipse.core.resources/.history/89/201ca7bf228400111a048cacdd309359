@@ -1,0 +1,56 @@
+#page_body {
+	margin-top: 20px;
+}
+
+table {
+	margin: auto;
+	padding-bottom: 10px;
+}
+
+td {
+	height: 30px;
+}
+
+#map_container {
+	width: 500px;
+	margin: auto;
+	border: 1px solid black;
+}
+
+label, .cal_labels {
+	color: #434D53;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+
+#dest_label {
+	text-align: right;
+	padding-right: 5px;
+}
+
+#start_label {
+	text-align: left;
+}
+
+#end_label {
+	text-align: right;
+}
+
+
+.big_fields {
+	color: #cdcdcd;
+	font-weight: bold;
+}
+
+#bottom_bar {
+	width: 100%;
+	min-width: 700px;
+	height: 40px;
+
+	background-color: #CEF0F2;
+}
+
+
+
+
