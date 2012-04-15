@@ -6,6 +6,11 @@
 	border: 1px solid black;
 }
 
+TODO: add "show all trips" button
+			styling on my info page
+			add functionality to "edit" button - boolean in url of home.html?
+
+
 #trip_details {
 	height: 400px;
 	width: 300px;
@@ -70,4 +75,25 @@
 	/*background-color:orange;*/
 }
 
+.orange {
+	background-color: #FFAB07;	
+	border: 1px solid #FFAB07;
+	color: #805809;
+}
+
+.orange:hover {
+	background-color: #805809;
+	border: 1px solid #805809;
+	color: #FFAB07;
+
+	text-shadow: none;
+}
+
+#show_button {
+	float: right;
+}
+
+#slider_container_2 {
+	margin-top: 4px;
+}
 
