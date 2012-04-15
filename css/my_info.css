@@ -1,0 +1,73 @@
+
+#my_trips {
+	height: 400px;
+	width: 500px;
+	margin: auto;
+	border: 1px solid black;
+}
+
+#trip_details {
+	height: 400px;
+	width: 300px;
+	margin: auto;
+	border: 1px solid black;
+}
+
+#trip_details_label {
+	font-family: Helvetica, sans-serif;
+	color: #434D53;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: left;
+	padding-left:10px;
+}
+
+#my_trips_label {
+	font-family: Helvetica, sans-serif;
+	color: #434D53;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: left;
+	padding-left:10px;
+}
+
+#trip_label {
+	font-family: Helvetica, sans-serif;
+	color: #434D53;
+	font-weight: bold;
+	font-size: 18px;
+	text-align: left;
+	padding-top:20px;
+	padding-left:20px;
+}
+
+#trip_details_table {
+	font-family: Helvetica, sans-serif;
+	color: #434D53;
+	font-weight: bold;
+	font-size: 16px;
+	text-align: left;
+	float:center;
+	/*background-color:red;*/
+}
+
+#trip_details_location {
+	text-align: left;
+	/*background-color:blue;*/
+}
+
+#trip_details_start {
+	text-align: left;
+	/*background-color:yellow;*/
+}
+
+#trip_details_end {
+	text-align: left;
+	/*background-color:green;*/
+}
+
+#trip_details_buttons{
+	/*background-color:orange;*/
+}
+
+

@@ -1,0 +1,146 @@
+body {
+	font-family: Helvetica, sans-serif;
+	font-weight: bold;
+	color: #434D63;
+	font-size: 15px;
+}
+
+#page_body {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	margin-left: auto;
+	margin-right: auto;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+td {
+	height: 30px;
+	position: relative;
+}
+
+.line_break {
+	height: 15px;
+}
+
+.big_fields {
+	height: 25px;
+	font-family: Helvetica, sans-serif;
+	color: #A9A9A9;
+	font-weight: bold;
+	font-size: 15px;
+	width: 62%;
+}
+
+.big_fields_focus {
+	height: 25px;
+	font-family: Helvetica, sans-serif;
+	color: #434D53;
+	font-weight: bold;
+	font-size: 15px;
+	width: 62%;
+}
+
+.input_buttons {
+	position: relative;
+	bottom: 2px;
+	left: 3px;
+}
+
+.orange {
+	background-color: #FFAB07;	
+	border: 1px solid #FFAB07;
+	color: #805809;
+}
+
+.orange:hover {
+	background-color: #805809;
+	border: 1px solid #805809;
+	color: #FFAB07;
+
+	text-shadow: none;
+}
+
+
+label, .cal_labels {
+	color: #434D53;
+	font-weight: bold;
+	font-size: 20px;
+	text-align: center;
+
+	margin: 0;
+	padding: 0;
+}
+
+#start_cal, #start_label {
+	padding-right: 10px;
+}
+
+#end_cal, #end_label {
+	padding-left: 10px;
+}
+
+#map_container {
+	height: 400px;
+	width: 500px;
+	margin: auto;
+	border: 1px solid black;
+
+	font-weight: normal;
+	margin-bottom: 5px;
+}
+
+#slider_container {
+	width: 500px;
+	margin: auto;
+}
+
+#radius_slider {
+	width: 280px;
+	position: relative;
+	top: 3px;
+}
+
+#radius_text {
+	padding-left: 3px;
+}
+
+
+#show_button {
+	float: right;
+	margin: 0;
+}
+
+#bottom_bar {
+	width: 100%;
+	min-width: 700px;
+	height: 40px;
+
+	background-color: #CEF0F2;
+
+	text-align: center;
+
+	margin: auto;
+	padding: auto 15px;
+
+}
+
+#footer_text {
+	font-weight: normal;
+	font-style: italic;
+	font-size: 11px;
+}
+
+
+.bold {
+	font-weight: bold;
+}
+
+
