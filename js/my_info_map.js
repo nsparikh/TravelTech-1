@@ -28,6 +28,7 @@ var overlappingEndDates = [['June 10th, 2012','June 12th, 2012'],['July 15th, 20
 var names = ['Sam','Mike','Emily','Phil','Sarah','Timmy','Yuchen','Neena'];
 //hardcoded email address
 var emails = ['soccerstar@gmail.com','cooldude@gmail.com','ponies@gmail.com','pacman@gmail.com'];
+var tripsText = ['Trip 1: Boston, MA', 'Trip 2: Berlin, Germany', 'Trip 3: Beijing, China'];
 
 
 //current variables
@@ -225,7 +226,6 @@ function initialize() {
 	initializeMap();
 	
 	$("#delete_button").click(function(evt) {
-		$('#trip_label').text('');
 		$('#trip_details_location').text('');
 		$('#trip_details_start').text('');
 		$('#trip_details_end').text('');
@@ -234,10 +234,16 @@ function initialize() {
 		$('#traveltech_button').toggle();
 		markersArray[tripNumber].setMap(null);
 		markersArray[tripNumber] = 'NOTRIP';
+		tripsText[tripNumber] = null;
 		removeNearbyTrips();
 		map.setCenter(new google.maps.LatLng(0,0));
 		clearCircle();
 		map.setZoom(1);
+
+		var text = '';
+		for (var i=0; i < tripsText.length; i++) if (tripsText[i]!=null) text+=tripsText[i]+'<br/>';
+		$('#trip_label').html(text);
+
 	});
 
 }
