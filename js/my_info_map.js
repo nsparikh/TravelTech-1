@@ -162,6 +162,8 @@ function changeRadius(newValue) {
 	document.getElementById('radius_text').innerHTML = newValue + ' km';
 	clearCircle(1);
 
+	if (infoWindow) infoWindow.close();
+
 	var circleOptions = {
 		center: circleCenter,
 		fillColor: "gray",

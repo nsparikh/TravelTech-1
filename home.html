@@ -26,41 +26,93 @@
 		}
 
 		// date diff
-		function dayDifference(first, second) {
-			return (second-first)/1000*60*60*24;
+		function dateDifference(first, second) {
+			return Math.ceil((second - first)/(1000*60*60*24));
+		}
+		
+		function nextDate(date) {
+			console.log(date + 1);
+		}
+
+		function highlightDays(first, second) {
+			var difference = dateDifference(first, second);
+			for (var i = 0; i < difference; i++) {
+				return [true, 'highlight'];
+			}
+		}
+
+		function getDatesRange(startDateText, endDateText) {
+			var results = [];
+			var date = parseDate(startDateText);
+			for (var i = 0; i < dateDifference(parseDate(startDateText), parseDate(endDateText)); i++) {
+				var newDate = new Date(date.getTime() + 24*60*60*1000);
+				results.push(newDate);
+				date = new Date;
+			}
+			return results;
 		}
 
 		// on ready
 		$(document).ready(function() {
+
+			// Vars
+			var startDate, endDate, today;
+			var dates = [];
 			
+				
 			// Calendars
 			$("#start_cal").datepicker({
-				defaultDate: +0,
+				//defaultDate: +0,
 				changeMonth: true,
 				changeYear: true,
 				minDate: 0,
 				onSelect: function (dateText, inst) {
-					var baseDate = $("#start_cal").datepicker("option", "minDate");
-					var inputDate = parseDate(dateText);
-					var dayDiff = dayDifference(baseDate, inputDate);
-					console.log(baseDate);
-					console.log(inputDate);
-					console.log(dayDiff);
-					$("#end_cal").datepicker("option", "minDate", "+" + dayDiff);   
-					console.log(dateText);
+					today = new Date();
+					startDate = parseDate(dateText);
+					
+					var daysFromStart = dateDifference(today, startDate);
+				
+					var todayString = today.getMonth() + 1 + "/" + today.getDate() + "/" + today.getFullYear();
+					
+					
+					$(".calendars").datepicker("option", "minDate", "+" + daysFromStart);   
+					
 				}			
 			});
 
 			$("#end_cal").datepicker({
 				minDate: 0,
-				// beforeShow: function(input) {
-				// return {
-				// minDate: input.id == "#end_cal"
-				// ? $("#start_cal").datepicker("getDate")
-				// : null,
-				// };
-				// }
+				changeMonth: true,
+				changeYear: true,
+				onSelect: function(dateText, inst) {
+					endDate = parseDate(dateText);
+					var daysFromStart = dateDifference(today, endDate);
+					var difference = dateDifference(startDate, endDate);
+					
+					$(".calendars").datepicker("option", "maxDate", "+" + daysFromStart);
+				},
+
+				beforeShowDay: function(date) {
+					//var startDateText = startDate.getMonth() + 1 + "/" + startDate.getDate() + startDate.getFullYear();
+					//var endDateText = endDate.getMonth() + 1 + "/" + endDate.getDate() + endDate.getFullYear();
+					//var dates = getDatesRange();
+					var startDateText = "4/23/2012";
+					var endDateText = "4/29/2012";
+					for (var i = 0; i < dateDifference(startDateText, endDateText); i++) {
+						if (dates[i] == date) {
+							return [true, 'highlight'];
+						}
+					}
+					
+					return [true, ''];
+					// return {
+						// minDate: input.id == "#end_cal"
+						// ? $("#start_cal").datepicker("getDate")
+						// : null,
+					// };
+				}
 			});	  
+
   	    	  		
   	  // Search bar
   	  $('input[name="destination"]').each(function() {
@@ -108,7 +160,7 @@
 <!-- Navigation bar at top of page -->
 <div id='nav_bar'>
 	<div id='nav_left'>
-		<a href='home.html'><img id='logo' src='images/logo.png' alt='TravelTech' /></a>
+		<a href='home.html'><img id='logo' src='images/logo.jpg' alt='TravelTech' /></a>
 	</div>
 
 	<div id='nav_right'>
@@ -142,7 +194,7 @@
 		<tr><td colspan='2'>	
 			<input type='text' class='big_fields' name='destination' id='destination_field' autocomplete='off'/>
 			<input id='search_button' type='button' class='buttons input_buttons' name='search' value='Search'/>
-			<input id='save_button' type='button' class='buttons input_buttons orange' name='save' value='Save Trip'/>
+			<input id='save_button' type='button' class='buttons input_buttons orange' name='save' value='Save Trip' onclick='saveTrip()'/>
 		</td></tr>
 		<tr><td class='line_break'></td></tr>
 	</table>
@@ -168,11 +220,13 @@
 
 
 <!-- bottom bar -->
+<footer>
 <div id='bottom_bar'>
 	<span id="footer_text">Note: TravelTech is optimized for Google Chrome, and some elements
 		will not work properly in other browsers. We apologize for the inconvenience.
 	</span>
 </div>
+</footer>
 <!-- end bottom bar -->
 
 

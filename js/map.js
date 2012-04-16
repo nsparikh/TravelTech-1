@@ -219,7 +219,7 @@ function addRedMarkerListener(marker) {
 		geocoder.geocode({'location':marker.getPosition()}, function(results, status) {
 			if (status == google.maps.GeocoderStatus.OK) {
 				if (results[1]) {
-					infoWindow.setContent('Location: ' + results[1].formatted_address + ', '+marker.getPosition().toString());
+					infoWindow.setContent('Location: ' + results[1].formatted_address);
 				}
 			}
 		});
@@ -255,6 +255,8 @@ function addBlueMarkerListener(marker, index) {
 function changeRadius(newValue) {
 	document.getElementById('radius_text').innerHTML = newValue + ' km';
 	clearCircle();
+
+	if (infoWindow) infoWindow.close();
 
 	var circleOptions = {
 		center: circleCenter,
@@ -299,4 +301,9 @@ function toRad(value) {
 	return value * Math.PI / 180;
 }
 
+// Temporary functionality for save button
+function saveTrip() {
+	var text = $('#destination_field').val();
+	if (text != 'Enter a location') window.location='my_info.html';
+}
 
