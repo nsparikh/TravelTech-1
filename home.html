@@ -63,8 +63,8 @@
 			// Calendars
 			$("#start_cal").datepicker({
 				//defaultDate: +0,
-				changeMonth: true,
-				changeYear: true,
+				//changeMonth: true,
+				//changeYear: true,
 				minDate: 0,
 				onSelect: function (dateText, inst) {
 					today = new Date();
@@ -82,8 +82,8 @@
 
 			$("#end_cal").datepicker({
 				minDate: 0,
-				changeMonth: true,
-				changeYear: true,
+				//changeMonth: true,
+				//changeYear: true,
 				onSelect: function(dateText, inst) {
 					endDate = parseDate(dateText);
 					var daysFromStart = dateDifference(today, endDate);

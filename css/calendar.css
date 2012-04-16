@@ -363,4 +363,14 @@
 
 .ui-datepicker-header {
 	height: 20px;
+	position: relative;
+	bottom: 3px;
 }
+
+.ui-datepicker-title {
+	position: relative;
+	bottom: 3px;
+}
+
+
+
